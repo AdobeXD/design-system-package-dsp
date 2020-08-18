@@ -42,7 +42,7 @@ The dsp.json file has specific elements:
 
 1. **File header** (required)
 
-```json
+```javascript
 // DSP Spec Version, present in all DSP JSON files
 "dsp_spec_version": 1.0,
 
@@ -55,7 +55,7 @@ The dsp.json file has specific elements:
 
 2. **Import** (required, but it can be empty)
 
-```json
+```javascript
 /* DSP JSON files can be imported into other packages,
  by being added to the import array. 
  If there are overrides, the first instance in
@@ -71,7 +71,7 @@ The dsp.json file has specific elements:
 
 3. **Settings** (required)
 
-```json
+```javascript
 
 "settings": {
 
@@ -103,7 +103,7 @@ The dsp.json file has specific elements:
 
 4. **Extension** (optional)
 
-```json
+```javascript
 /* If partners need to add specific information that
 is not core to DSP, the new information has to be placed
 inside an ext object following the inverse domain
