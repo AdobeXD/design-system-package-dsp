@@ -42,37 +42,55 @@ The dsp.json file has specific elements:
 
 1. **File header** (required)
 
-```javascript
+```json
+// DSP Spec Version, present in all DSP JSON files
+"dsp_spec_version": 1.0,
 
-"dsp_spec_version": 1.0, // DSP Spec Version, present in all DSP JSON files
-"last_updated": "UTCDateTime", // When this file was last updated
-"last_updated_by": "Author Name", // Who last updated this file
+// When this file was last updated
+"last_updated": "UTCDateTime",
+
+// Who last updated this file
+"last_updated_by": "Author Name",
 ```
 
 2. **Import** (required, but it can be empty)
 
-```javascript
-// DSP JSON files can be imported into other packages, by being added to the import array. If there are overrides, the first instance in the array wins.
+```json
+/* DSP JSON files can be imported into other packages,
+ by being added to the import array. 
+ If there are overrides, the first instance in
+ the array wins. */
+
 "import": [
-	{"src": "components.json"},
-	{"src": "docs.json"},
-	{"src": "tokens.json"},
-	{"src": "fonts.json"}
+    {"src": "data/components.json"},
+    {"src": "data/docs.json"},
+    {"src": "data/tokens.json"},
+    {"src": "data/fonts.json"}
 ],
 ```
 
 3. **Settings** (required)
 
-```javascript
-// DSP settings object
+```json
+
 "settings": {
+
     "name": "My Design System",
     "package_version": "0.5.0",
-    "build_status_label": "dev", // Examples: dev, staged, released, deprecated
-    "snippet_trigger_prefix": "xd-", // Prefix that will be prepended to code snippets 
+
+    // Examples: dev, staged, released, deprecated
+    "build_status_label": "dev",
+
+    // Prefix that will be prepended to code snippets
+    "snippet_trigger_prefix": "xd-",
+
     "build_tool": "styledictionary",
     "build_tool_version": "1.0.0",
-    "build_params": "", // extra command line parameters that can be passed to the build tool during token compilation
+
+    // extra command line parameters that can be passed to the build tool during token compilation
+    "build_params": "",
+
+    // languages/formats for the build tool to compile to
     "languages": {
         "sass": {
             "version": 1.0,
@@ -85,11 +103,15 @@ The dsp.json file has specific elements:
 
 4. **Extension** (optional)
 
-```javascript
-// If partners need to add specific information that is not core to DSP, the new information has to be placed inside an ext object following the inverse domain naming convention
-	"ext-com_partnername": {
-		"foo": "..."
-	},
+```json
+/* If partners need to add specific information that
+is not core to DSP, the new information has to be placed
+inside an ext object following the inverse domain
+naming convention */
+
+"ext-com_partnername": {
+    "foo": "..."
+},
 ```
 
 5. **Entities** (optional)
@@ -125,18 +147,16 @@ Divides each class by functional category. Currently recognized values for each 
 
 ### Sample dsp.json file
 
-```javascript
+```json
 {
-    "dsp_spec_version": 1.0, // DSP Spec Version, present in all DSP JSON files
-    "last_updated": "UTCDateTime", // When this file was last updated
-    "last_updated_by": "Author Name", // Who last updated this file
+    "dsp_spec_version": 1.0,
+    "last_updated": "UTCDateTime",
+    "last_updated_by": "Author Name",
 
-    // If partners need to add specific information that is not core to DSP, the new information has to be placed inside an ext object following the inverse domain naming convention
     "ext-com_partnername": {
         "foo": "..."
     },
 
-    // DSP JSON files can be imported into other packages, by being added to the import array. If there are overrides, the first instance in the array wins.
     "import": [
         {"src": "data/components.json"},
         {"src": "data/docs.json"},
@@ -144,15 +164,14 @@ Divides each class by functional category. Currently recognized values for each 
         {"src": "data/fonts.json"}
     ],
 
-    // DSP settings object
     "settings": {
         "name": "My Design System",
         "package_version": "0.5.0",
-        "build_status_label": "dev", // Examples: dev, staged, released, deprecated
-        "snippet_trigger_prefix": "xd-", // Prefix that will be prepended to code snippets 
+        "build_status_label": "dev",
+        "snippet_trigger_prefix": "xd-", 
         "build_tool": "styledictionary",
         "build_tool_version": "1.0.0",
-        "build_params": "", // extra command line parameters that can be passed to the build tool during token compilation
+        "build_params": "",
         "languages": {
             "sass": {
                 "version": 1.0,
@@ -169,6 +188,310 @@ Divides each class by functional category. Currently recognized values for each 
 Additional JSON files can be imported to define additional tokens, components, docs and collections. They can be broken down into separate JSON files, or can be all in one JSON file. For organization purposes, we recommend saving them in the /data folder.
 
 Each JSON file must include the standard file header, and may contain any of the properties defined for the dsp.json file. If a settings property is defined in an imported file, it will be ignored in favor of the dsp.json value.
+
+### Sample JSON files
+
+#### data/tokens.json
+
+```json
+{
+    "dsp_spec_version": 1.0,
+    "last_updated": "UTCDateTime",
+    "last_updated_by": "Author Name",
+
+    "entities": [
+        {
+            "class": "token",
+            "type": "color",
+            "id": "warning-label-color",
+            "value": "FFFF0011",
+            "name": "name is optional, will default to id if omitted",
+            "last_updated": "UTCDateTime",
+            "last_updated_by": "Author Name",
+            "description": "The red used everywhere",
+
+            "tags": [
+                "branding",
+                "color",
+                "primary"
+            ],
+
+            "ext-com_adobe-cclib": {
+                "source": "http://path",
+                "id": "cclibid",
+                "last_sync": "UTCDateTime",
+                "sync": true
+            },
+
+            "ext-com_adobe-xd_languages": {
+                "sass": "$primary-red: hsl(255, 0, 0)",
+                "ios-swift": "..."
+            }
+        },
+        {
+            "class": "token",
+            "type": "size",
+            "id": "size-font-medium",
+            "value": "14.0",
+            "last_updated": "UTCDateTime",
+            "last_updated_by": "Author Name",
+            "description": "The medium 14 used everywhere",
+
+            "tags": [
+                "branding",
+                "color",
+                "primary"
+            ]
+        },
+        {
+            "class": "token",
+            "type": "color",
+            "id": "primary-red",
+            "name": "primary-red",
+            "value": "#FF0000",
+            "description": "This is the red used _everywhere_, it is **important** to remember our brand guidelines",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": [
+                "branding",
+                "color",
+                "primary"
+            ]
+        },
+        {
+            "class": "token",
+            "type": "color",
+            "id": "primary-green",
+            "name": "primary-green",
+            "value": "#00ff00",
+            "description": "The green used everywhere",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": []
+        },
+        {
+            "class": "alias",
+            "type": "color",
+            "id": "cta-background",
+            "name": "cta-background",
+            "value": "{primary-red}",
+            "description": "The background color used for calls to action",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": []
+        },
+        {
+            "class": "token",
+            "type": "size",
+            "id": "base-padding",
+            "name": "base-padding",
+            "value": "4",
+            "description": "Size description here",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": []
+        },
+        {
+            "class": "token",
+            "type": "custom",
+            "id": "base-weight-value",
+            "name": "base-weight-value",
+            "value": "bold",
+            "description": "Token description here",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": []
+        },
+        {
+            "class": "token",
+            "type": "custom",
+            "id": "custom-value",
+            "name": "custom-value",
+            "value": "foo",
+            "description": "",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": []
+        },
+        {
+            "class": "token",
+            "type": "custom",
+            "id": "font-default-text-family",
+            "name": "font-default-text-family",
+            "value": "Segoe UI",
+            "description": "",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": []
+        },
+        {
+            "class": "token",
+            "type": "custom",
+            "id": "font-default-text-weight",
+            "name": "font-default-text-weight",
+            "value": "Bold",
+            "description": "",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": []
+        },
+        {
+            "class": "token",
+            "type": "size",
+            "id": "font-default-text-size",
+            "name": "font-default-text-size",
+            "value": "12",
+            "description": "",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": []
+        }
+    ]
+}
+```
+
+#### data/fonts.json
+
+```json
+{
+    "dsp_spec_version": 1.0,
+    "last_updated": "UTCDateTime",
+    "last_updated_by": "Author Name",
+    "entities": [
+        {
+            "class": "collection",
+            "type": "font",
+            "id": "myfont",
+            "last_updated": "UTCDateTime",
+            "last_updated_by": "Author Name",
+            "description": "The red used everywhere",
+            "tags": [
+                "branding",
+                "color",
+                "primary"
+            ],
+            "ext-com_adobe-cclib": {
+                "source": "http://path",
+                "id": "cclibid",
+                "last_sync": "UTCDateTime",
+                "sync": true
+            },
+            "tokens": [
+                {
+                    "key": "family",
+                    "id": "font-myfont-family",
+                    "type": "custom",
+                    "value": "Segoe UI, Arial, sans-serif"
+                },
+                {
+                    "key": "size",
+                    "id": "size-myfont-small",
+                    "type": "size",
+                    "value": 10
+                }
+            ]
+        },
+        {
+            "class": "collection",
+            "type": "font",
+            "id": "default-text",
+            "name": "default-text",
+            "tags": [],
+            "tokens": [
+                {
+                    "id": "font-default-text-family",
+                    "type": "custom",
+                    "value": "Segoe UI",
+                    "key": "family"
+                },
+                {
+                    "id": "font-default-text-weight",
+                    "type": "custom",
+                    "value": "Bold",
+                    "key": "weight"
+                },
+                {
+                    "id": "font-default-text-size",
+                    "type": "size",
+                    "value": "12",
+                    "key": "size"
+                }
+            ]
+        }
+    ]
+}
+```
+
+#### data/components.json
+
+```json
+{
+    "dsp_spec_version": 1.0,
+    "last_updated": "UTCDateTime",
+    "last_updated_by": "Author Name",
+
+    "entities": [
+        {
+            "class": "component",
+            "type": "page",
+            "id": "unique-id",
+            "name": "Button",
+            "last_updated": "UTCDateTime",
+            "last_updated_by": "Author Name",
+            "description": "The red used everywhere",
+
+            "tags": [
+                "branding",
+                "color",
+                "primary"
+            ],
+
+            "related_entity_ids": [
+                "btn-background-color",
+                "default-text"
+            ],
+
+            "snippets": {
+                "trigger": "my_component",
+                "languages": {
+                    "sass": "...",
+                    "ios-swift": "..."
+                }
+            }
+        }
+    ]
+}
+```
+
+#### data/docs.json
+
+```json
+{
+    "dsp_spec_version": 1.0,
+    "last_updated": "UTCDateTime",
+    "last_updated_by": "Author Name",
+
+    "import": [],
+
+    "entities": [
+        {
+            "class": "doc",
+            "type": "page",
+            "id": "unique-id",
+            "name": "Introduction",
+            "last_updated": "UTCDateTime",
+            "last_updated_by": "Author Name",
+            "description": "The red used everywhere",
+
+            "tags": [
+                "branding",
+                "color",
+                "primary"
+            ]
+        }
+    ]
+}
+```
 
 ## Using NPM to distribute your Design System Package
 
