@@ -1,14 +1,14 @@
 # Design System Package (DSP) Documentation
-> *DSP is an open-format folder-structure created to help teams share Design System information across tools*
+> *DSP is a new open-format folder-structure created to help teams share Design System information across tools.*
 
 This document describes the Design System Package (DSP) structure, including details of how each internal file or folder should be used.
 
 ## Package Format
 
-A Design System Package (DSP) is a folder containing subfolders with assets and JSON files that represent Design System information relevant to developers:
+A Design System Package (DSP) is a folder containing subfolders with assets and JSON files that represent Design System information:
 * Documentation Pages (e.g. Introduction, Principles)
 * Agnostic Design Tokens as color, size, custom and aliases 
-* Collections of tokens, such fonts (Typography)
+* Collections of tokens, such as fonts (Typography)
 * Component Documentation (Markdown sections, code snippets, etc)
 
 [Download a DSP folder example](https://www.dropbox.com/s/rg49izd2i4yac2g/sample-dsp.zip?dl=0)
@@ -19,7 +19,7 @@ These are the contents of each DSP folder:
 * [/data](#data-folder)
 * [/dist](#dist-folder)
 * [/ext](#ext-folder)
-* [dsp.json](#dsp-file)
+* [dsp.json](#understanding-the-dsp.json-file)
 
 #### Assets folder
 This folder contains all the static assets included with the Design System Package, such as images or SVG files.
