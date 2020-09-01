@@ -134,6 +134,8 @@ Divides each class by functional category. Currently recognized values for each 
     * doc: page
     * component: page
 
+> *Note: For the color value, we recommend using [RGBA hexadecimal](https://en.wikipedia.org/wiki/RGBA_color_model) (#RRGGBBAA, hex value with alpha).
+
 * **id**
 * **name** *// name is optional, will default to id if omitted*
 * **value**
