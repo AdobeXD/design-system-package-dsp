@@ -90,14 +90,19 @@ The dsp.json file has specific elements:
     // extra command line parameters that can be passed to the build tool during token compilation
     "build_params": "",
 
-    // languages/formats for the build tool to compile to
-    "languages": {
-        "sass": {
-            "version": 1.0,
-            "color_format": "hsla"
+    // languages (transform groups) for the build tool to compile to
+    "languages": [
+        {
+            "label": "CSS",
+            "selected": true,
+            "type": "css"
         },
-        "ios_swift": {}
-    }
+        {
+            "label": "Sass (SCSS)",
+            "selected": true,
+            "type": "sass"
+        }
+    ]
 }
 ```
 
@@ -174,13 +179,18 @@ Divides each class by functional category. Currently recognized values for each 
         "build_tool": "styledictionary",
         "build_tool_version": "1.0.0",
         "build_params": "",
-        "languages": {
-            "sass": {
-                "version": 1.0,
-                "color_format": "hsla"
+        "languages": [
+            {
+                "label": "CSS",
+                "selected": true,
+                "type": "css"
             },
-            "ios_swift": {}
-        }
+            {
+                "label": "Sass (SCSS)",
+                "selected": true,
+                "type": "sass"
+            }
+        ]
     }
 }
 ```
