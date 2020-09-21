@@ -11,7 +11,7 @@ A Design System Package (DSP) is a folder containing subfolders with assets and 
 * Collections of tokens, such as fonts (Typography)
 * Component Documentation (Markdown sections, code snippets, etc)
 
-[Download a DSP folder example](https://www.dropbox.com/s/rg49izd2i4yac2g/sample-dsp.zip?dl=0)
+[Download a DSP folder example](https://github.com/AdobeXD/design-system-package-dsp/raw/master/sample-dsp.zip)
 
 These are the contents of each DSP folder:
 
