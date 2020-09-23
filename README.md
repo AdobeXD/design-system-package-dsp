@@ -89,20 +89,20 @@ The dsp.json file has specific elements:
     "build_tool_version": "1.0.0",
 
     // extra command line parameters that can be passed to the build tool during token compilation
-    "build_params": "",
+    "build_params": "-c ./config.json",
 
     // languages to be used in component code snippets and build tool
     "languages": [
         {
             "label": "React",
-            "export-tokens": true,
-            "snippet-id": "react",
+            "export_tokens": true,
+            "snippet_id": "react",
             "syntax": "javascript"
         },
         {
             "label": "Angular",
-            "export-tokens": false,
-            "snippet-id": "angular",
+            "export_tokens": false,
+            "snippet_id": "angular",
             "syntax": "javascript"
         }
     ]
@@ -181,19 +181,25 @@ Divides each class by functional category. Currently recognized values for each 
         "snippet_trigger_prefix": "xd-", 
         "build_tool": "styledictionary",
         "build_tool_version": "1.0.0",
-        "build_params": "",
+        "build_params": "-c ./config.json",
         "languages": [
             {
+                "label": "CSS",
+                "export_tokens": true,
+                "snippet_id": "css",
+                "syntax": "text/css"
+            },
+            {
                 "label": "React",
-                "export-tokens": true,
-                "snippet-id": "react",
+                "export_tokens": true,
+                "snippet_id": "react",
                 "syntax": "javascript",
                 "ext-com_adobe_xd-styledictionary_id": "javascript"
             },
             {
                 "label": "Angular",
-                "export-tokens": true,
-                "snippet-id": "angular",
+                "export_tokens": true,
+                "snippet_id": "angular",
                 "syntax": "javascript",
                 "ext-com_adobe_xd-styledictionary_id": "javascript"
             }
@@ -468,6 +474,7 @@ Each JSON file must include the standard file header, and may contain any of the
             "snippets": {
                 "trigger": "my_component",
                 "languages": {
+                    "css": "...",
                     "react": "...",
                     "angular": "..."
                 }
