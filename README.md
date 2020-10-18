@@ -544,7 +544,8 @@ Each JSON file must include the standard file header, and may contain any of the
 
 ## Using NPM to distribute your Design System Package
 
-If you decide to use NPM to distribute your package, please add a package.json file to the root folder by following [the instructions to publish to NPM](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages).
+If you decide to use NPM to distribute your package, please add a package.json file to the root folder by following [the instructions to publish to NPM](https://zellwk.com/blog/publish-to-npm/).
+One example is Adobe Spectrum DSP on npm, that can be installed on your project with `npm install adobe-spectrum-dsp`. 
 
 For iOS you can explore sharing the tokens using [CocoaPods](https://cocoapods.org/), and for Android you can explore sharing the tokens as part of a [Gradle](https://gradle.org/).
 
