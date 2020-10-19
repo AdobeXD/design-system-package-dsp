@@ -94,7 +94,7 @@ The dsp.json file has specific elements:
             "syntax": "text/css"
             
             /*
-            additional properties that are not core to DSP should follow the inverse domain
+            additional properties that are not core to DSP should follow the reverse domain
             naming convention (e.g. 'ext-com_adobe_xd-styledictionary_id' is set to use Style
             Dictionary transform group 'css' to compile agnostic design tokens stored in /data,
             into CSS variables, if export_tokens is set to true)
@@ -141,8 +141,8 @@ the array wins.
 /*
 If partners need to add specific information that
 is not core to DSP, the new information has to be placed
-inside an ext object following the inverse domain
-naming convention
+inside an ext object following the reverse domain
+naming convention (https://en.wikipedia.org/wiki/Reverse_domain_name_notation)
 */
 
 "ext-com_partnername": {
