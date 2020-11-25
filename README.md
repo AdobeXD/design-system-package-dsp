@@ -318,8 +318,8 @@ Each JSON file must include the standard file header, and may contain any of the
             "tags": []
         },
         {
-            "class": "alias",
-            "type": "color",
+            "class": "token",
+            "type": "alias",
             "id": "cta-background",
             "name": "cta-background",
             "value": "{primary-red}",
