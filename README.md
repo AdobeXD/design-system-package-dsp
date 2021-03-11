@@ -506,7 +506,9 @@ Each JSON file must include the standard file header, and may contain any of the
                     "react": "...",
                     "angular": "..."
                 }
-            }
+            },
+
+            "renditions": ["component-rendition.svg"]
         }
     ]
 }
