@@ -330,17 +330,6 @@ Each JSON file must include the standard file header, and may contain any of the
         },
         {
             "class": "token",
-            "type": "size",
-            "id": "base-padding",
-            "name": "base-padding",
-            "value": "4",
-            "description": "Size description here",
-            "last_updated": "2020-07-28T22:44:29.537Z",
-            "last_updated_by": "Author Name",
-            "tags": []
-        },
-        {
-            "class": "token",
             "type": "custom",
             "id": "base-weight-value",
             "name": "base-weight-value",
@@ -393,6 +382,41 @@ Each JSON file must include the standard file header, and may contain any of the
             "last_updated": "2020-07-28T22:44:29.537Z",
             "last_updated_by": "Author Name",
             "tags": []
+        },
+        {
+            "class": "token",
+            "type": "size",
+            "id": "base-line-height",
+            "name": "base-line-height",
+            "value": "4",
+            "description": "Line height description here",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": [],
+            "category_id": "912ab61e-5227-4ec7-8649-fd50e1423724" //optional
+        },
+        {
+            "class": "token",
+            "type": "size",
+            "id": "spacing-10",
+            "name": "spacing-10",
+            "value": "10",
+            "description": "Spacing description here",
+            "last_updated": "2020-07-28T22:44:29.537Z",
+            "last_updated_by": "Author Name",
+            "tags": [],
+            "category_id": "24c6d6be-9004-4ca7-be4c-309b6b55fbb3" //optional
+        }
+    ],
+
+    "categories": [
+        {
+            "id": "912ab61e-5227-4ec7-8649-fd50e1423724", //unique id
+            "label": "Line Height"
+        },
+        {
+            "id": "24c6d6be-9004-4ca7-be4c-309b6b55fbb3",
+            "label": "Spacing"
         }
     ]
 }
@@ -437,7 +461,8 @@ Each JSON file must include the standard file header, and may contain any of the
                     "type": "size",
                     "value": "10"
                 }
-            ]
+            ],
+            "related_entity_ids": ["ids_of_added_tokens"] // optional
         },
         {
             "class": "collection",
