@@ -185,7 +185,7 @@ Divides each class by functional category. Currently recognized values for each 
 
 ### Sample dsp.json file
 
-```json
+```javascript
 {
     "dsp_spec_version": "1.0",
     "last_updated": "UTCDateTime",
@@ -246,7 +246,7 @@ Each JSON file must include the standard file header, and may contain any of the
 
 #### data/tokens.json
 
-```json
+```javascript
 {
     "dsp_spec_version": "1.0",
     "last_updated": "UTCDateTime",
@@ -424,7 +424,7 @@ Each JSON file must include the standard file header, and may contain any of the
 
 #### data/fonts.json
 
-```json
+```javascript
 {
     "dsp_spec_version": "1.0",
     "last_updated": "UTCDateTime",
@@ -497,7 +497,7 @@ Each JSON file must include the standard file header, and may contain any of the
 
 #### data/components.json
 
-```json
+```javascript
 {
     "dsp_spec_version": "1.0",
     "last_updated": "UTCDateTime",
@@ -541,7 +541,7 @@ Each JSON file must include the standard file header, and may contain any of the
 
 #### data/docs.json
 
-```json
+```javascript
 {
     "dsp_spec_version": "1.0",
     "last_updated": "UTCDateTime",
